@@ -1,11 +1,11 @@
-package com.example.sbb;
+package com.example.sbb.answer;
 
+import com.example.sbb.question.Question;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter
@@ -18,8 +18,10 @@ public class Answer {
 
     @Column
     private String content;
+
     @CreatedDate
     private LocalDateTime createDate;
+
     @ManyToOne
     private Question question;
 }
